@@ -99,11 +99,11 @@ class mylist {
     }
 
     void erase(const T & value) {
-        for (Node * node = head, *p = 0; n; p=node, node=node->next) {
-            if (nnode->value == value) {
+        for (Node * node = head, *p = 0; node; p=node, node=node->next) {
+           if (node->value == value) {
                 (p ? p->next : head) = node->next;
                 --count;
-                delete n;
+                delete node;
                 return;
             }
         }
@@ -121,65 +121,3 @@ class mylist {
         return count;
     }
 };
- 
-// namespace op
-/*
-template <class T>
-struct Node{
-    T item;
-    Node *next;
-    Node(const T &item, Node &next = nullptr) : item(item), next(next){}
-};
-
-template <class T>
- class Iterator{
-    protected:
-            Node *cur;
-    public:
-        friend List;
-        Iterator(Node* cur) : cur(cur) {}
-        T & operator*() {
-            assert(cur != NULL);
-            return cur->value;
-        }
-        const T & operator*() const {
-            assert(cur != NULL);
-            return cur->value;
-        }
-        void operator++() const {
-        assert(cur != NULL);
-        cur = cur->next;
-        }
-        bool operator==(const Iterator & other) const {
-        return (cur == other.cur);
-        }
-        bool operator!=(const Iterator & other) const {
-        return (cur != other.cur);
-    }
-};
-
-template<class T>
-class List{
-    protected:
-        int number;
-        Node *head;
-    public:
-        friend Iterator;
-        friend Node;
-        Iterator begin();
-        Iterator end();
-        void push_back();
-        void push_front();
-        eepop_back();
-        eeop_front();
-        eerase();
-        Iterator mbegin();
-        Iterator mend();
-};
-
-List::Iterator begin(){
-    return Iteraor()
-}
-
-*/
-#endif
